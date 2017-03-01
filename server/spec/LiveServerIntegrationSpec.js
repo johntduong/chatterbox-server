@@ -69,10 +69,21 @@ describe('server', function() {
   it('Should 404 when asked for a nonexistent endpoint', function(done) {
     request('http://127.0.0.1:3000/arglebargle', function(error, response, body) {
       // console.log('REQUEST URL', request.url);
+    // console.log('STATUS CODE', response.statusCode);
+
       expect(response.statusCode).to.equal(404);
-      done();
     });
+    done();
   });
+
+  //should return correct messages for specified chatroom
+  // it('Should ')
+
+  //should return messages based on the given requested parameters
+
+  //should return success if POST request is completed
+
+  //should return error if POST request has failed
 
 
 });

@@ -60,6 +60,7 @@ $(document).ready(function() {
         //data: {order: '-createdAt'},
         contentType: 'application/json',
         success: function (response) {
+          response = JSON.parse(response);
           app.clearMessages();
           console.log(response.results);
           //app.storage = result
@@ -117,10 +118,12 @@ $(document).ready(function() {
       app.send(message);
     }
   };
+
   app.fetch();
-  // setInterval(function() {
-  //   app.fetch();
-  // }, 5000);
+  setInterval(function() {
+    console.log('fetching');
+    app.fetch();
+  }, 5000);
   $('#roomSelect').on('change', function() {
     app.selectedRoom = $('#roomSelect').val();
     //app.clearMessages();
